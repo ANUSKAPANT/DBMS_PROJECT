@@ -1,0 +1,52 @@
+{% extends 'template/main.html' %} 
+{% load static %}
+{% block content %}
+
+
+<br>
+
+<div class="row">
+	<div class="col-8">
+		<div class="card card-body">
+			<form method="get">
+		  		<h5>Search Tables:</h5>
+		  		<hr>
+				{{a.form.as_ul}}
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
+	
+</div>
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm" border="4">
+				<tr height="60" bgcolor="#999999">
+					<th>Student's Name</th>
+					<th>Roll Number</th>
+					<th>Project Title</th>
+					<th>Delete</th>
+				</tr>
+				{% for student in students%}
+				<tr>
+
+					<td>{{student.name}}</td>
+					<td>{{student.batch}}/{{student.program}}/{{student.roll_number}}</td>
+					<td>{{student.project.title}}</td>	
+					<td><a class="btn btn-danger btn-sm" href="{%url 'deletes' student.id%}">Delete</a></td>
+					
+					
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+
+
+{% endblock %}

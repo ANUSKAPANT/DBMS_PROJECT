@@ -1,0 +1,77 @@
+{% extends 'template/main.html' %} 
+{% load static %}
+{% block content %}
+
+
+<br>
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md-10">
+			<div class="card w-100  text-center text-black  mb-3" id="create">
+			  	<div class="card-header">
+			  		<h5>CREATE:</h5>
+			  	</div>
+			  	<br>
+			  	<div class="card-body">
+					<a class="btn btn-outline-info  btn-sm " href="{% url 'createp' %}">Create Project Details </a>
+					<a class="btn btn-outline-info  btn-sm " href="{% url 'creates' %}">Create Student Profile</a>
+			  	</div>
+			  	<br><br>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md-10">
+			<div class="card w-100 text-center text-black  mb-3" id="create">
+			  	<div class="card-header">
+			  		<h5>READ:</h5>
+			  	</div>
+			  	<br>
+			  	<div class="card-body">
+					<a class="btn btn-outline-info  btn-sm " href="{% url 'read'%}">View Project Details </a>
+			  	</div>
+			  	<br><br>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col">
+		<div class="col-md-10">
+			<div class="card w-100 text-center text-black  mb-3" id="create">
+			  	<div class="card-header">
+			  		<h5>UPDATE:</h5>
+			  	</div>
+			  	<br>
+			  	<div class="card-body">
+					<a class="btn btn-outline-info  btn-sm " href="{% url 'pupdate' %}">Update Project Details </a>
+					<a class="btn btn-outline-info  btn-sm " href="{% url 'supdate' %}">Update Student Profile</a>
+			  	</div>
+			  	<br><br>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md-10">
+			<div class="card w-150  text-center text-black  mb-3" id="create">
+			  	<div class="card-header">
+			  		<h5>DELETE:</h5>
+			  	</div>
+			  	<br>
+			  	<div class="card-body">
+					<a class="btn btn-outline-info  btn-sm " href="{% url 'pdelete'%}">Delete Project Details </a>
+					<a class="btn btn-outline-info  btn-sm " href="{% url 'sdelete'%}">Delete Student Profile</a>
+			  	</div>
+			  	<br><br>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

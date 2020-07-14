@@ -1,0 +1,49 @@
+{% extends 'template/main.html' %} 
+{% load static %}
+{% block content %}
+
+
+<br>
+
+<div class="row">
+	<div class="col-5">
+		<div class="card card-body">
+			<form method="get">
+		  		<h5>Search Tables:</h5>
+		  		<hr>
+					{{b.form.as_ul}}
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
+	
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm" border="4">
+				<tr height="60" bgcolor="#999999"> 
+					<th>Project Title</th>
+					<th>Category</th>
+					<th>Supervisor's Name</th>
+					<th>Delete</th>
+				</tr>
+				{% for project in projects%}
+				<tr>
+					<td>{{project.title}}</td>
+					<td>{{project.category}}</td>
+					<td>{{project.supervisor}}</td>
+					<td><a class="btn btn-danger btn-sm" href="{%url 'deletep' project.id%}">Delete</a></td>
+					
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+
+
+{% endblock %}
